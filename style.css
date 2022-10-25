@@ -1,0 +1,241 @@
+:root {
+  --gradient: hsl(236, 72%, 79%) to hsl(237, 63%, 64%);
+  --vl-grayish-blue: hsl(240, 78%, 98%);
+  --l-grayish-blue: hsl(234, 14%, 74%);
+  --grayish-blue: hsl(233, 13%, 49%);
+  --d-grayish-blue: hsl(232, 13%, 33%);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Montserrat", sans-serif;
+  background: var(--vl-grayish-blue);
+}
+
+ul {
+  list-style: none;
+}
+
+section {
+  padding: 20px;
+}
+
+.pricing {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 90vh;
+}
+
+.pricing h1 {
+  margin: 30px 0;
+  color: var(--d-grayish-blue);
+  font-size: 2rem;
+}
+
+.toggle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 50px;
+}
+
+.toggle p {
+  color: var(--l-grayish-blue);
+}
+
+/* slider */
+/* The switch - the box around the slider */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+  margin: 0 20px;
+}
+
+/* Hide default HTML checkbox */
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* The slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #2196f3;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+.slider:hover {
+  opacity: 0.8;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+input:checked + .slider {
+  background-color: #2196f3;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #2196f3;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+/* slider */
+.cards {
+  display: grid;
+  grid-template-columns: 1fr;
+  width: 100%;
+  gap: 20px;
+}
+
+.card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: white;
+  width: 100%;
+  padding: 30px;
+  border-radius: 10px;
+}
+
+.plan {
+  color: var(--grayish-blue);
+}
+.price {
+  font-size: 3.5rem;
+  color: var(--d-grayish-blue);
+  margin: 20px 0;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.dollar {
+  font-size: 2rem;
+  margin-right: 5px;
+}
+
+ul {
+  width: 100%;
+  text-align: center;
+}
+
+ul li {
+  border-top: 1px solid var(--l-grayish-blue);
+  padding: 15px 0;
+}
+
+ul li:nth-child(3) {
+  border-bottom: 1px solid var(--l-grayish-blue);
+}
+
+button {
+  border: none;
+  background: none;
+  font-family: "Montserrat", sans-serif;
+  outline: none;
+  font-size: 0.9rem;
+  margin-top: 20px;
+  color: white;
+  background-image: linear-gradient(90deg, #a3a8f0, #696fdd);
+  width: 100%;
+  padding: 10px;
+  border-radius: 5px;
+  text-transform: uppercase;
+  border: 1px solid transparent;
+}
+
+button:hover {
+  background: transparent;
+  border: 1px solid #a3a8f0;
+  cursor: pointer;
+  color: #696fdd;
+}
+
+/* Middle Card */
+
+.middle-card {
+  background-image: linear-gradient(90deg, #a3a8f0, #696fdd);
+  color: white;
+}
+.middle-card .plan,
+.middle-card .price {
+  color: white;
+}
+
+.middle-card button {
+  background: white;
+  color: #696fdd;
+}
+
+.middle-card button:hover {
+  background: transparent;
+  border: 1px solid #fff;
+  cursor: pointer;
+  color: #fff;
+}
+
+/* Attribution */
+.attribution {
+  font-size: 11px;
+  text-align: center;
+}
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
+
+@media only screen and (min-width: 1080px) {
+  .cards {
+    display: flex;
+    gap: 0;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .card {
+    max-width: 350px;
+  }
+
+  .middle-card {
+    padding: 50px 30px;
+  }
+}
